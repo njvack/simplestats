@@ -13,6 +13,21 @@ def mode(vals):
     """Computes the mode from a list of values."""
     pass
 
+def median(numlist):
+    try:
+        for val in numlist:
+            float(val)
+    except ValueError:
+        raise TypeError("The list was not numbers.")
+
+    numlist.sort()
+    length = len(numlist)
+    index = length/2
+    if length % 2 == 0:
+       return mean([numlist[index], numlist[index - 1]])
+    else:
+       return numlist[index]
+
 def std(vals):
     """Computes the standard deviation from a list of values."""
     n = len(vals)
