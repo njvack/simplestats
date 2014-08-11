@@ -37,6 +37,10 @@ def test_median1():
     assert_equal(obs, 0.5)
 
     assert_raises(TypeError, median, ['a', 'b', 'v'])
+
+    l = [5,4,3,2,1]
+    obs = median(l)
+    assert_equal(l, [5,4,3,2,1])
     
 
 # FIXME Put Mode tests here

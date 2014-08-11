@@ -7,7 +7,7 @@ def mean(vals):
         raise TypeError("The list was not numbers.")
     except:
         print "Something unknown happened with the list."
-    return total/length
+    return float(total)/length
 
 def mode(vals):
     """Computes the mode from a list of values."""
@@ -20,7 +20,7 @@ def median(numlist):
     except ValueError:
         raise TypeError("The list was not numbers.")
 
-    numlist.sort()
+    numlist = sorted(numlist)
     length = len(numlist)
     index = length/2
     if length % 2 == 0:
