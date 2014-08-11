@@ -1,7 +1,7 @@
 from nose.tools import assert_equal, assert_almost_equal, assert_true, \
     assert_false, assert_raises, assert_is_instance
 
-from stats import mean, mode, std, var#, median
+from stats import mean, mode, std, var, median
 
 def test_mean1():
     obs = mean([0, 0, 0, 0])
@@ -25,7 +25,19 @@ def test_floating_mean1():
     exp = 1.5
     assert_equal(obs, exp)
 
-# FIXME Put Median tests here
+
+def test_median1():
+    obs = median([0,0,0,0])
+    assert_equal(obs, 0)
+
+    obs = median([0,1,2])
+    assert_equal(obs, 1)
+
+    obs = median([0,1])
+    assert_equal(obs, 0.5)
+
+    assert_raises(TypeError, median, ['a', 'b', 'v'])
+    
 
 # FIXME Put Mode tests here
 

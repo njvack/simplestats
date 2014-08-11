@@ -14,6 +14,12 @@ def mode(vals):
     pass
 
 def median(numlist):
+    try:
+        for val in numlist:
+            float(val)
+    except ValueError:
+        raise TypeError("The list was not numbers.")
+
     numlist.sort()
     length = len(numlist)
     index = length/2
